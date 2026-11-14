@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f6f8fc"><meta name="description" content="Your local Gmail and YouTube inbox, organized with Jev."><title>Jev Inbox — Your local workspace</title><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preload" href="/assets/material-symbols.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/styles.css"><script src="/app.js" defer></script></head>
+<body>
+<div class="app-shell">
+  <header class="topbar">
+    <div class="brand-area"><button class="icon-button" id="mobile-menu" aria-label="Toggle sidebar"><span class="material-symbols" aria-hidden="true">menu</span></button><a class="brand" href="/" aria-label="Jev Inbox home"><span class="brand-mark material-symbols" aria-hidden="true">all_inbox</span><span>Jev Inbox</span></a></div>
+    <div class="search-wrap"><span id="search-icon"></span><input type="search" id="search" placeholder="Search mail and comments" aria-label="Search conversations"><kbd>/</kbd></div>
+    <div class="top-actions"><button class="workspace-switch" id="workspace-switch">Sample data</button><button class="icon-button" data-settings="connections" aria-label="Settings"><span class="material-symbols" aria-hidden="true">settings</span></button><span class="user-avatar" id="account-avatar" aria-label="Your workspace">H</span></div>
+  </header>
+  <aside class="sidebar" aria-label="Main navigation">
+    <button class="run-primary" id="run-button"></button>
+    <nav id="navigation" aria-label="Mailbox"></nav>
+    <div class="sidebar-heading"><span>Labels</span><button class="icon-button" data-action="category-guide" aria-label="About classifications"><span class="material-symbols" aria-hidden="true">help</span></button></div>
+    <nav id="category-navigation" aria-label="Classification labels"></nav>
+    <div class="sidebar-spacer"></div>
+    <div class="source-section"><div class="sidebar-heading">Accounts</div><button class="source-line" data-settings="connections"><img class="product-logo" src="/assets/gmail.png" alt=""><span>Gmail</span><span id="gmail-dot" class="status-dot"></span></button><button class="source-line" data-settings="connections"><img class="product-logo" src="/assets/youtube.png" alt=""><span>YouTube</span><span id="youtube-dot" class="status-dot"></span></button></div>
+    <div id="jev-card" class="jev-card"></div>
+    <button class="settings-button" data-settings="connections" id="settings-button"></button>
+    <div class="local-note"><span class="tiny-dot"></span>Local workspace</div>
+  </aside>
+  <main class="main">
+    <div class="workspace-heading"><div><h1 id="page-title">Inbox</h1><span class="subtitle" id="page-subtitle">Gmail and YouTube, organized together</span></div><button class="text-button" data-action="category-guide">Classification guide <span class="material-symbols" aria-hidden="true">arrow_outward</span></button></div>
+    <section id="setup-checklist" class="setup-checklist" aria-label="First-run setup" hidden></section>
+    <section class="batch-panel" aria-label="Batch settings"><div class="batch-controls"><div class="batch-field"><label for="batch-size">Batch size</label><select id="batch-size"><option value="50">50 messages</option><option value="100">100 messages</option><option value="250">250 messages</option><option value="500">500 messages</option><option value="1000">1,000 messages</option></select></div><div class="batch-field"><label for="batch-source">Source</label><select id="batch-source"><option value="gmail">Gmail</option><option value="youtube">YouTube</option></select></div><div class="batch-field" id="batch-window-field"><label for="batch-window">Gmail date range</label><select id="batch-window"><option value="30">Last 30 days</option><option value="90">Last 90 days</option><option value="all">All Inbox mail</option><option value="custom">Custom search</option></select></div><button class="button primary" id="batch-run-button">Scan & run Jev</button><button class="button" id="recheck-button" data-action="recheck-saved" title="Reclassify saved emails without downloading Gmail again">Recheck saved labels</button><button class="button" id="batch-stop-button" data-action="stop-run" hidden>Stop run</button></div><p class="batch-help" id="batch-help"></p><p class="batch-scope" id="batch-scope"></p></section>
+    <section id="run-summary" class="run-summary" aria-label="Run performance"></section>
+    <section class="inbox-panel" aria-label="Conversations">
+      <div class="inbox-controls"><div class="toolbar-actions"><button class="icon-button" id="sync-button" aria-label="Sync inbox" title="Sync inbox"></button><button class="icon-button" id="activity-button" aria-label="Run history" title="Run history"></button><span id="queue-count" class="queue-count"></span></div><div class="filters"><select id="category-filter" aria-label="Filter by category"><option value="all">All classifications</option></select><select id="sort-order" aria-label="Sort conversations"><option value="newest">Newest first</option><option value="priority">Priority first</option><option value="oldest">Oldest first</option><option value="slowest">Slowest first</option></select></div></div>
+      <div id="mode-banner" class="mode-banner" role="status"></div>
+      <div class="source-tabs" id="source-tabs" aria-label="Message source"></div>
+      <div class="inbox-columns"><div class="mail-list-wrap"><div class="message-column-head"><span></span><span>Sender</span><span class="seconds-heading" title="Measured Jev classification time for this individual message">Time (sec)</span><span class="subject-heading">Subject</span><span class="classification-heading">Classification</span><span>Date</span></div><div id="message-list" class="message-list" role="group" aria-label="Messages"></div></div><article id="detail" class="detail" aria-label="Selected conversation" hidden></article></div>
+      <div class="inbox-footer"><span id="footer-note"></span><button class="text-button" data-action="run-history">View run details <span class="material-symbols" aria-hidden="true">arrow_outward</span></button></div>
+    </section>
+    <footer class="page-footer"><span id="scan-scope">Local workspace</span><span>Jev Inbox</span></footer>
+  </main>
+</div>
+<div class="modal-backdrop" id="modal-backdrop" hidden><section class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1"></section></div>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+<div id="connection-error" class="connection-error" hidden role="alert"></div>
+</body></html>

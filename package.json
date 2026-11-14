@@ -1,0 +1,21 @@
+{
+  "name": "jev-inbox",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A local Gmail and YouTube inbox with Jev classification, your own accounts, and measured batch timings.",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "start": "node scripts/start.mjs",
+    "start:open": "node scripts/start.mjs --open",
+    "test": "node --test tests/*.test.mjs",
+    "check": "node scripts/check.mjs",
+    "check:share": "node scripts/check-share.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/honeyychawla/jev-inbox.git"
+  }
+}

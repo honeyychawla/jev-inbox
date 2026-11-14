@@ -1,0 +1,22 @@
+# Private runtime files — never publish these.
+data/
+**/data/
+.env
+.env.*
+*.sqlite
+*.sqlite-*
+*.db
+.encryption-key
+*client_secret*.json
+credentials*.json
+tokens*.json
+*.pem
+*.key
+*.log
+node_modules/
+.DS_Store
+Thumbs.db
+.openai/
+dist/
+coverage/
+
