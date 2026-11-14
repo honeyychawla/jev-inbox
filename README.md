@@ -9,7 +9,7 @@ A minimalist local dashboard for sorting Gmail and YouTube comments with Jev thr
 ## Start locally
 
 1. Install [Node.js LTS](https://nodejs.org/en/download). Node 22.13+ is required; current LTS is recommended.
-2. Download the release ZIP and **extract it completely**.
+2. Download the release ZIP, or use the ZIP shared with you on Drive, and **extract it completely**.
 3. Start the app:
 
 | Your computer | Launcher |

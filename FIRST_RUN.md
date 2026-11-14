@@ -2,7 +2,7 @@
 
 ## 1. Start the dashboard
 
-Install the LTS installer for your computer from https://nodejs.org/en/download. Extract the entire Jev Inbox ZIP before launching it.
+Install the LTS installer for your computer from https://nodejs.org/en/download. Download the ZIP from Drive or GitHub and extract it completely before launching it. You do not run the app inside Drive.
 
 - **Mac:** double-click `Start Jev Inbox.command`.
 - **Windows:** double-click `Start Jev Inbox.cmd`.
